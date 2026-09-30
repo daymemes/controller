@@ -1,18 +1,11 @@
-/* =========================================================
-   KARIOH'S COVE — PS5 GAMEPAD VIEWER
-   Icy / Snow / Neon Theme
-   ========================================================= */
-
 body {
-    background-color: transparent;
+    background-color: #000000;
+    background-color: RGBA(0, 0, 0, 0);
     margin: 0 auto;
     overflow: hidden;
 }
 
-/* =========================================================
-   CONTROLLER BASE
-   ========================================================= */
-
+/* KARIOH'S COVE CONTROLLER */
 .controller.custom {
     background: url(https://i.imgur.com/CYRynAT.png);
     width: 830px;
@@ -20,32 +13,12 @@ body {
     margin-left: 0;
     margin-top: 0;
 
-    /* Karioh's Cove icy appearance */
-    filter:
-        brightness(0.78)
-        contrast(1.15)
-        saturate(0.75)
-        hue-rotate(8deg);
-
-    position: relative;
-}
-
-/* Icy glow around the controller */
-.controller.custom::after {
-    content: "";
-    position: absolute;
-    inset: 15px;
-    pointer-events: none;
-    border-radius: 45%;
-    box-shadow:
-        0 0 20px rgba(125, 220, 255, 0.15),
-        0 0 45px rgba(125, 220, 255, 0.08);
+    /* icy blue appearance */
+    filter: hue-rotate(165deg) saturate(0.65) brightness(0.9);
 }
 
 
-/* =========================================================
-   ANALOG STICKS
-   ========================================================= */
+/* ANALOG STICKS */
 
 .custom .sticks {
     position: absolute;
@@ -58,35 +31,16 @@ body {
 .custom .stick {
     position: absolute;
     background: url(https://i.imgur.com/CVRn6CX.png);
-
     height: 100px;
     width: 100px;
-
-    filter:
-        brightness(1.1)
-        saturate(0.7)
-        hue-rotate(8deg)
-        drop-shadow(0 0 5px rgba(110, 220, 255, 0.35));
 }
 
 .custom .stick.pressed.left {
     background-position-x: -102px;
-
-    filter:
-        brightness(1.5)
-        saturate(1.1)
-        hue-rotate(8deg)
-        drop-shadow(0 0 12px rgba(120, 230, 255, 0.9));
 }
 
 .custom .stick.pressed.right {
     background-position-x: -102px;
-
-    filter:
-        brightness(1.5)
-        saturate(1.1)
-        hue-rotate(8deg)
-        drop-shadow(0 0 12px rgba(120, 230, 255, 0.9));
 }
 
 .custom .stick.right {
@@ -94,9 +48,7 @@ body {
 }
 
 
-/* =========================================================
-   OPTIONS / CREATE BUTTONS
-   ========================================================= */
+/* START / SELECT */
 
 .custom .arrows {
     position: absolute;
@@ -111,22 +63,12 @@ body {
     background: url(https://i.imgur.com/C1YPtca.png);
     width: 24px;
     height: 40px;
-
-    filter:
-        brightness(1.1)
-        saturate(0.6)
-        hue-rotate(10deg)
-        drop-shadow(0 0 5px rgba(140, 225, 255, 0.3));
 }
 
 .custom .back.pressed,
 .custom .start.pressed {
     background-position-y: 40px;
     margin-top: -2px;
-
-    filter:
-        brightness(1.5)
-        drop-shadow(0 0 10px rgba(140, 230, 255, 0.9));
 }
 
 .custom .back {
@@ -141,9 +83,7 @@ body {
 }
 
 
-/* =========================================================
-   D-PAD
-   ========================================================= */
+/* D-PAD */
 
 .custom .dpad {
     position: absolute;
@@ -156,11 +96,6 @@ body {
 .custom .face {
     background: url(https://i.imgur.com/xHzP6yc.png);
     position: absolute;
-
-    filter:
-        brightness(0.95)
-        saturate(0.55)
-        hue-rotate(10deg);
 }
 
 .custom .face.up,
@@ -202,18 +137,10 @@ body {
 .custom .face.pressed {
     margin-top: -1px;
     background-position-y: 64px;
-
-    filter:
-        brightness(1.5)
-        saturate(1.1)
-        hue-rotate(10deg)
-        drop-shadow(0 0 12px rgba(120, 225, 255, 0.9));
 }
 
 
-/* =========================================================
-   FACE BUTTONS
-   ========================================================= */
+/* FACE BUTTONS */
 
 .custom .abxy {
     position: absolute;
@@ -228,22 +155,11 @@ body {
     width: 54px;
     height: 54px;
     background: url(https://i.imgur.com/bpt0MPg.png);
-
-    filter:
-        brightness(0.95)
-        saturate(0.7)
-        hue-rotate(10deg);
 }
 
 .custom .button.pressed {
     background-position-y: -56px;
     margin-top: 0px;
-
-    filter:
-        brightness(1.45)
-        saturate(1.2)
-        hue-rotate(10deg)
-        drop-shadow(0 0 12px rgba(130, 225, 255, 1));
 }
 
 .custom .a {
@@ -269,21 +185,13 @@ body {
 }
 
 
-/* =========================================================
-   BUMPERS
-   ========================================================= */
+/* BUMPERS */
 
 .custom .bumper {
     width: 81px;
     height: 32px;
     background: url(https://i.imgur.com/JocHHed.png);
-
     opacity: 0;
-
-    filter:
-        brightness(1.25)
-        saturate(0.7)
-        hue-rotate(10deg);
 }
 
 .custom .bumpers {
@@ -296,10 +204,6 @@ body {
 
 .custom .bumper.pressed {
     opacity: 1;
-
-    filter:
-        brightness(1.5)
-        drop-shadow(0 0 12px rgba(120, 225, 255, 0.9));
 }
 
 .custom .bumper.left {
@@ -307,14 +211,13 @@ body {
 }
 
 .custom .bumper.right {
+    -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
     float: right;
 }
 
 
-/* =========================================================
-   TRIGGERS
-   ========================================================= */
+/* TRIGGERS */
 
 .custom .triggers {
     position: absolute;
@@ -327,13 +230,7 @@ body {
     background: url(https://i.imgur.com/k8PnZZG.png);
     width: 84px;
     height: 73px;
-
     opacity: 0;
-
-    filter:
-        brightness(1.2)
-        saturate(0.7)
-        hue-rotate(10deg);
 }
 
 .custom .trigger.right {
@@ -348,27 +245,48 @@ body {
     float: right;
 }
 
-.custom .trigger.pressed {
-    opacity: 1;
 
-    filter:
-        brightness(1.55)
-        saturate(1.15)
-        hue-rotate(10deg)
-        drop-shadow(0 0 15px rgba(120, 230, 255, 1));
+/* =====================================================
+   KARIOH'S COVE COLORS
+   These ONLY affect the interactive pieces.
+   ===================================================== */
+
+.custom .stick {
+    filter: hue-rotate(165deg) saturate(0.8);
+}
+
+.custom .face {
+    filter: hue-rotate(165deg) saturate(0.8);
+}
+
+.custom .button {
+    filter: hue-rotate(165deg) saturate(0.8);
+}
+
+.custom .bumper {
+    filter: hue-rotate(165deg) saturate(0.8);
+}
+
+.custom .trigger {
+    filter: hue-rotate(165deg) saturate(0.8);
 }
 
 
-/* =========================================================
-   EXTRA KARIOH'S COVE GLOW
-   ========================================================= */
+/* BRIGHT ICE EFFECT WHEN PRESSED */
 
-.custom .button.pressed,
-.custom .face.pressed,
 .custom .stick.pressed,
+.custom .face.pressed,
+.custom .button.pressed {
+    filter:
+        hue-rotate(165deg)
+        saturate(1.4)
+        brightness(1.35);
+}
+
 .custom .bumper.pressed,
 .custom .trigger.pressed {
-    transition:
-        filter 0.08s ease,
-        opacity 0.08s ease;
+    filter:
+        hue-rotate(165deg)
+        saturate(1.4)
+        brightness(1.35);
 }
